@@ -1,0 +1,40 @@
+HELP.md
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+classes/
+bin/
+build/
+.gradle/
+.classpath
+.project
+.settings/
+#.externalToolBuilders/
+*.*~
+*.kate-swp
+.DS_Store
+.sass-cache/
+
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+src/main/resources/site_app_versions.properties
+
+rebel.xml
+
+.idea/.name
+.idea/habba-site.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+./idea/*
+/.apt_generated/
