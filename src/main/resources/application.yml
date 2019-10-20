@@ -1,0 +1,12 @@
+
+service:
+  props:
+    message: "Welcome to Heartisan!"
+---
+spring:
+  profiles: development
+
+service:
+  props:
+    message: "Welcome to Heartisan!"
+
