@@ -1,4 +1,4 @@
-package com.heartisan.config;
+package com.heartisan.infra.config;
 
 import lombok.Getter;
 import lombok.Setter;
