@@ -11,15 +11,14 @@ import com.heartisan.domain.home.service.HeartisanService;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
 
-@RestController(value = "/v1/heartisan")
-@AllArgsConstructor(onConstructor_={@Autowired})
+@RestController
 public class HeartisanController {
 
-    @NonNull private HeartisanService heartisanServic;
+    //@NonNull private HeartisanService heartisanServic;
 
     @GetMapping(value = "/sayHello")
     public ResponseEntity<String> sayHello() {
-        return new ResponseEntity<>(heartisanServic.sayHello(), HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("Checking..");
 
     }
 }

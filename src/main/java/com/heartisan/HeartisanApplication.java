@@ -8,7 +8,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class, SecurityAutoConfiguration.class})
+@SpringBootApplication
 public class HeartisanApplication extends SpringBootServletInitializer {
 	
 	@Override
