@@ -1,11 +1,11 @@
 package com.heartisan.domain.user.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.heartisan.domain.user.entity.RegistrationBean;
 import com.heartisan.domain.user.entity.User;
 import com.heartisan.domain.user.exception.UserNotFoundException;
 import com.heartisan.domain.user.repository.UserRepository;
@@ -25,5 +25,18 @@ public class UserService {
 	
 	public User getUserById(Long userId) throws UserNotFoundException {
 		return userRepository.findById(userId).orElseThrow(UserNotFoundException::new);
+	}
+
+	public User createUser(RegistrationBean regisrationBean) {
+		User user = new User();
+		user.setUsername(regisrationBean.getUsername());
+		user.setFirstName(regisrationBean.getFirstName());
+		user.setLastName(regisrationBean.getLastName());
+		user.setMobileNumber(regisrationBean.getMobileNumber());
+		user.setPassword(regisrationBean.getPassword());
+		user.setCreatedBy("admin");
+		user.setLastModifiedBy("admin");
+		User savedUser = userRepository.save(user);
+		return savedUser;
 	}
 }
