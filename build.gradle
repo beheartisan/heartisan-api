@@ -36,6 +36,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-jdbc:$SPRING_BOOT_VERSION"
 	compile "org.springframework.boot:spring-boot-starter-thymeleaf:$SPRING_BOOT_VERSION"
     compile("org.springframework.boot:spring-boot-starter-security:$SPRING_BOOT_VERSION")
+    compile "org.springframework.session:spring-session-jdbc" // no need to give version; io.spring.dependency-management will manage it
     
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
