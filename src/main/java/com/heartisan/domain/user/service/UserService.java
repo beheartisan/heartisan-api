@@ -2,6 +2,8 @@ package com.heartisan.domain.user.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,7 @@ import lombok.NonNull;
 @AllArgsConstructor(onConstructor_= {@Autowired})
 public class UserService {
 	
+	private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 	@NonNull private UserRepository userRepository;
 	
 	public List<User> getAllUsers() {
@@ -24,10 +27,12 @@ public class UserService {
 	}
 	
 	public User getUserById(Long userId) throws UserNotFoundException {
+		LOG.debug("finding uder by id: {}", userId);
 		return userRepository.findById(userId).orElseThrow(UserNotFoundException::new);
 	}
 
 	public User createUser(RegistrationBean regisrationBean) {
+		LOG.debug("creating user...");
 		User user = new User();
 		user.setUsername(regisrationBean.getUsername());
 		user.setFirstName(regisrationBean.getFirstName());
