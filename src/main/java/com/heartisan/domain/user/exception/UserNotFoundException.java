@@ -2,6 +2,10 @@ package com.heartisan.domain.user.exception;
 
 public class UserNotFoundException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final String ERROR_CODE = "USR-404";
     public static final String ERROR_MESSAGE = "Sorry, requested user not found.";
     
